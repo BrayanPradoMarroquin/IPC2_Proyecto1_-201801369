@@ -9,6 +9,13 @@ Menú
 6. Salir 
 """
 
+def datos():
+    print("Brayan Hamllelo Estevem Prado Marroquín")
+    print("201801369")
+    print("Introducción a la Programación y Computación 2 Sección D")
+    print("Ingeniería en Ciencias y Sistemas")
+    print("Cuarto Semestre")
+
 while valor==True:
     print(menu)
     opcion=int(input("Ingrese la opcion de la acción a realizar"))
@@ -19,7 +26,7 @@ while valor==True:
     elif opcion==3:
         print("Archivo Escrito correctamente")
     elif opcion==4:
-        print("Mostrar Datos del alumno")
+        datos()
     elif opcion==5:
         print("Grafica generada correctamente")
     elif opcion==6:
