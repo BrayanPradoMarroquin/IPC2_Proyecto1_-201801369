@@ -1,4 +1,6 @@
+import metodosI
 valor=True
+
 menu = """""
 Menú
 1. Cargue el archivo
@@ -8,19 +10,20 @@ Menú
 5. Generar grafica
 6. Salir 
 """
-
+#datos del alumno
 def datos():
     print("Brayan Hamllelo Estevem Prado Marroquín")
     print("201801369")
     print("Introducción a la Programación y Computación 2 Sección D")
     print("Ingeniería en Ciencias y Sistemas")
     print("Cuarto Semestre")
-
+#generador del menu
 while valor==True:
     print(menu)
     opcion=int(input("Ingrese la opcion de la acción a realizar"))
     if opcion==1:
         print("Llamar archivo")
+        metodosI.llamararchivo()
     elif opcion==2:
         print("Archivo procesado")
     elif opcion==3:
