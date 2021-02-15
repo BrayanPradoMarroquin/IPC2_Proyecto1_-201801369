@@ -1,6 +1,6 @@
 import metodosI
 valor=True
-
+ruta=None
 menu = """""
 Menú
 1. Cargue el archivo
@@ -23,9 +23,10 @@ while valor==True:
     opcion=int(input("Ingrese la opcion de la acción a realizar"))
     if opcion==1:
         print("Llamar archivo")
-        metodosI.llamararchivo()
+        ruta = metodosI.llamararchivo()
     elif opcion==2:
         print("Archivo procesado")
+        metodosI.mostrardatos(ruta)
     elif opcion==3:
         print("Archivo Escrito correctamente")
     elif opcion==4:

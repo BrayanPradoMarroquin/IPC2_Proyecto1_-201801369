@@ -1,16 +1,22 @@
 import xml.etree.ElementTree as ET
 from tkinter import *
 from tkinter.filedialog import askopenfilename
+root = Tk()
+root.withdraw()
+root.update()
 
 def generar(ruta):
     tree = ET.parse(ruta)
     Raiz = tree.getroot()
-    print(Raiz)
+    return Raiz
 
 def llamararchivo():
-    root = Tk()
-    root.withdraw()
-    root.update()
     pathString = askopenfilename(filetypes=[("Text files", "*.xml")])
-    generar(pathString)
+    ruta = generar(pathString)
+    return ruta
 
+def mostrardatos(Raiz):
+    for elem in Raiz:
+        print(elem.attrib)
+        for sub in elem:
+            print(sub.attrib)
