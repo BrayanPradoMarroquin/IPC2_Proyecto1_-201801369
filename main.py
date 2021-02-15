@@ -24,9 +24,9 @@ while valor==True:
     if opcion==1:
         print("Llamar archivo")
         ruta = metodosI.llamararchivo()
+        metodosI.mostrardatos(ruta)
     elif opcion==2:
         print("Archivo procesado")
-        metodosI.mostrardatos(ruta)
     elif opcion==3:
         print("Archivo Escrito correctamente")
     elif opcion==4:

@@ -1,6 +1,8 @@
 import xml.etree.ElementTree as ET
 from tkinter import *
 from tkinter.filedialog import askopenfilename
+from lista import listanombres
+lsita = listanombres()
 root = Tk()
 root.withdraw()
 root.update()
@@ -17,6 +19,7 @@ def llamararchivo():
 
 def mostrardatos(Raiz):
     for elem in Raiz:
-        print(elem.attrib)
+        lsita.agregarnodo(elem.get("nombre"), elem.get("n"), elem.get("m"))
         for sub in elem:
-            print(sub.attrib)
+            print(sub.get("x"))
+            print(sub.get("y"))

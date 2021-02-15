@@ -19,3 +19,24 @@ class listanombres:
         else:
             nuevo.next=self.cola
             self.cabeza=nuevo
+
+    def nodoprimero(self):
+        if self.vacio()==True:
+            return ("Lista Vacia")
+        else:
+            return self.cabeza
+
+
+
+    #def imprimir(self):
+    #    if self.vacio()==True:
+    #        print("Lista Vacia")
+    #    else:
+    #        validar=True
+    #        temp = self.cabeza
+    #        while(validar):
+    #            print(temp.getElemento())
+    #            if temp==self.cola:
+    #                validar=False
+    #            else:
+    #                temp=temp.next
