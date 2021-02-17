@@ -20,7 +20,7 @@ def datos():
 #generador del menu
 while valor==True:
     print(menu)
-    opcion=int(input("Ingrese la opcion de la acción a realizar"))
+    opcion=int(input("Ingrese la opcion de la acción a realizar: "))
     if opcion==1:
         print("Llamar archivo")
         ruta = metodosI.llamararchivo()

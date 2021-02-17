@@ -12,8 +12,8 @@ class listanombres:
         if self.cabeza==None:
             return True
 
-    def agregarnodo(self, nombre, fila, columna):
-        nuevo = nodo(nombre, fila, columna)
+    def agregarnodo(self, nombre, fila, columna, ruta):
+        nuevo = nodo(nombre, fila, columna, ruta)
         if self.vacio()==True:
             self.cabeza=self.cola=nuevo
         else:
@@ -26,8 +26,6 @@ class listanombres:
         else:
             return self.cabeza
 
-
-
     #def imprimir(self):
     #    if self.vacio()==True:
     #        print("Lista Vacia")
@@ -35,8 +33,8 @@ class listanombres:
     #        validar=True
     #        temp = self.cabeza
     #        while(validar):
-    #            print(temp.getElemento())
-    #            if temp==self.cola:
+    #           print(temp.getElemento())
+    #           if temp==self.cola:
     #                validar=False
     #            else:
     #                temp=temp.next

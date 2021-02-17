@@ -19,7 +19,7 @@ def llamararchivo():
 
 def mostrardatos(Raiz):
     for elem in Raiz:
-        lsita.agregarnodo(elem.get("nombre"), elem.get("n"), elem.get("m"))
-        for sub in elem:
-            print(sub.get("x"))
-            print(sub.get("y"))
+        print(elem.get("nombre") + " " + elem.get("n")+ " "+ elem.get("m"))
+        lsita.agregarnodo(elem.get("nombre"), elem.get("n"), elem.get("m"), elem)
+
+

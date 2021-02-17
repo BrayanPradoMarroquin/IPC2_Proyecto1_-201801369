@@ -9,7 +9,7 @@ class listados:
 
     def vacio(self):
         if self.cabeza==None:
-            return True
+            return  True
 
     def agregarnodo(self, dato, fila, columna):
         nuevo = nodo(dato, fila, columna)
@@ -19,8 +19,8 @@ class listados:
             nuevo.next=self.cola
             self.cabeza=nuevo
 
-    def nodoprimero(self):
+    def primernodo(self):
         if self.vacio()==True:
-            return ("Lista Vacia")
+            return  ("Lista Vacia")
         else:
             return self.cabeza
