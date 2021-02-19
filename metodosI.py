@@ -19,7 +19,13 @@ def llamararchivo():
 
 def mostrardatos(Raiz):
     for elem in Raiz:
-        print(elem.get("nombre") + " " + elem.get("n")+ " "+ elem.get("m"))
         lsita.agregarnodo(elem.get("nombre"), elem.get("n"), elem.get("m"), elem)
+        print(elem.get("nombre")+" "+ elem.get("n")+" "+elem.get("m"))
 
+def comparar(Raiz):
+    for rama in Raiz:
+        respuesta = lsita.buscar(rama.get("nombre"), rama, rama.get("n"), rama.get("m"))
+
+def imprimir():
+    lsita.imprimir()
 

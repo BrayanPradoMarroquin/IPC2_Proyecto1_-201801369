@@ -22,11 +22,13 @@ while valor==True:
     print(menu)
     opcion=int(input("Ingrese la opcion de la acción a realizar: "))
     if opcion==1:
-        print("Llamar archivo")
         ruta = metodosI.llamararchivo()
         metodosI.mostrardatos(ruta)
+        #metodosI.imprimir()
     elif opcion==2:
-        print("Archivo procesado")
+        print("Archivo procesando")
+        print("Generando matriz binaria")
+        metodosI.comparar(ruta)
     elif opcion==3:
         print("Archivo Escrito correctamente")
     elif opcion==4:

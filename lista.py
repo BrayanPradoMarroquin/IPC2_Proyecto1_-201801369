@@ -15,9 +15,9 @@ class listanombres:
     def agregarnodo(self, nombre, fila, columna, ruta):
         nuevo = nodo(nombre, fila, columna, ruta)
         if self.vacio()==True:
-            self.cabeza=self.cola=nuevo
+            self.cabeza=nuevo
         else:
-            nuevo.next=self.cola
+            nuevo.next=self.cabeza
             self.cabeza=nuevo
 
     def nodoprimero(self):
@@ -26,15 +26,18 @@ class listanombres:
         else:
             return self.cabeza
 
-    #def imprimir(self):
-    #    if self.vacio()==True:
-    #        print("Lista Vacia")
-    #    else:
-    #        validar=True
-    #        temp = self.cabeza
-    #        while(validar):
-    #           print(temp.getElemento())
-    #           if temp==self.cola:
-    #                validar=False
-    #            else:
-    #                temp=temp.next
+    def imprimir(self):
+        i = self.cabeza
+        while i:
+            print(i.nombreM+ " -> ")
+            #self.imprimir_valores()
+            i=i.next
+
+    def buscar(self, nombre, ruta, x, y):
+        nuevo = self.cabeza
+        while (nuevo!=None) and (nuevo.nombreM!=nombre):
+            nuevo=nuevo.next
+        nuevo.obtenerruta(ruta, x, y)
+
+    def imprimir_valores(self):
+        self.cabeza.imprmir()
