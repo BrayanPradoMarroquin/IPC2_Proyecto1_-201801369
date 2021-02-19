@@ -27,16 +27,17 @@ class listados:
 
     def buscardato(self, x, y):
         nuevo = self.cabeza
-        while (nuevo!=None) & (nuevo.fila!=str(x)) & (nuevo.columna!=str(y)):
-            nuevo=nuevo.next
-        return nuevo.binario
+        while (nuevo!=None) :
+                    if (nuevo.fila==str(x)) & (nuevo.columna==str(y)):
+                        return nuevo.binario
+                    nuevo=nuevo.next
 
     def buscarnodo(self, ruta, x, y):
         for j in range(1,(int(y)+1)):
             for i in range(1,(int(x)+1)):
                 valor1 = self.buscardato(j,j)
                 valor2 = self.buscardato(i,j)
-                print("valor 1 es: "+str(valor1)+" Valor 2 es: "+str(valor2))
+                print("valor 1 en la posicion "+str(j)+" "+str(j)+": "+str(valor1)+" valor 2 en la posicion "+str(i)+" "+str(j)+": "+str(valor2))
 
     def imprimir(self):
         i = self.cabeza
