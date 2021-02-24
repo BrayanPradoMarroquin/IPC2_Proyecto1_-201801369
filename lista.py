@@ -37,7 +37,7 @@ class listanombres:
         nuevo = self.cabeza
         while (nuevo!=None) and (nuevo.nombreM!=nombre):
             nuevo=nuevo.next
-        nuevo.obtenerruta(ruta, x, y)
+        nuevo.obtenerruta(ruta, x, y, nombre)
 
     def imprimir_valores(self):
         self.cabeza.imprmir()

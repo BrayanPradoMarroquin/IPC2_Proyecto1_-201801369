@@ -1,5 +1,5 @@
 from nododato import nododato
-
+import metodosiniciales
 nodo = nododato
 
 class listados:
@@ -39,7 +39,7 @@ class listados:
                 return nuevo.valor
             nuevo = nuevo.next
 
-    def buscarnodo(self, ruta, x, y):
+    def buscarnodo(self, ruta, x, y, nombre):
         for j in range(1,(int(y)+1)):
             for i in range(1,(int(x)+1)):
                 if (i!=j):
@@ -48,7 +48,7 @@ class listados:
                     print(str(valor1)+" || "+str(valor2))
                     valorbase1 = self.buscardatobase(j,j)
                     valorbase2 = self.buscardatobase(i,j)
-
+                    metodosiniciales.listasumarllamar(valor1, valor2, valorbase1, valorbase2, j, nombre)
 
     def imprimir(self):
         i = self.cabeza
