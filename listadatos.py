@@ -32,15 +32,28 @@ class listados:
                         return nuevo.binario
                     nuevo=nuevo.next
 
+    def buscardatobase(self, x, y):
+        nuevo = self.cabeza
+        while (nuevo != None):
+            if (nuevo.fila == str(x)) & (nuevo.columna == str(y)):
+                return nuevo.valor
+            nuevo = nuevo.next
+
     def buscarnodo(self, ruta, x, y):
         for j in range(1,(int(y)+1)):
             for i in range(1,(int(x)+1)):
-                valor1 = self.buscardato(j,j)
-                valor2 = self.buscardato(i,j)
-                print("valor 1 en la posicion "+str(j)+" "+str(j)+": "+str(valor1)+" valor 2 en la posicion "+str(i)+" "+str(j)+": "+str(valor2))
+                if (i!=j):
+                    valor1 = self.buscardato(j,j)
+                    valor2 = self.buscardato(i,j)
+                    print(str(valor1)+" || "+str(valor2))
+                    valorbase1 = self.buscardatobase(j,j)
+                    valorbase2 = self.buscardatobase(i,j)
+
 
     def imprimir(self):
         i = self.cabeza
         while i:
             print(i.valor + " -> ")
             i = i.next
+
+
