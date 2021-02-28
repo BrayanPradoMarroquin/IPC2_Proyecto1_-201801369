@@ -41,3 +41,12 @@ class listanombres:
 
     def imprimir_valores(self):
         self.cabeza.imprmir()
+
+    def buscarnodomatriz(self, nombre):
+        nuevo = self.cabeza
+        while (nuevo.nombreM!=nombre):
+            if (nuevo != None):
+                nuevo=nuevo.next
+                if (nuevo==None):
+                    return 0
+        return nuevo

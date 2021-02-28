@@ -34,7 +34,8 @@ while valor==True:
     elif opcion==4:
         datos()
     elif opcion==5:
-        print("Grafica generada correctamente")
+        matriz = input("Ingrese el nombre de la matriz a graficar: ")
+        metodosI.grafo(matriz)
     elif opcion==6:
         valor=False
         print("Gracias por usar el programa")

@@ -1,0 +1,14 @@
+digraph G { 
+Fil[label="2"] 
+matriz_ejemplo-> filas -> Fil 
+Col[label="2"] 
+matriz_ejemplo-> columnas -> Col 
+11[label="0"] 
+matriz_ejemplo->11
+21[label="0"] 
+11->21
+12[label="3"] 
+matriz_ejemplo->12
+22[label="1"] 
+12->22
+}

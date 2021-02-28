@@ -1,13 +1,5 @@
-def comparar(binario1, binario2):
-    if int(binario1)==int(binario2):
-        return True
-    else:
-        return False
-
-
 def suma(valor1, valor2):
     return int(valor1)+int(valor2)
-
 
 class nodosuma:
 
@@ -18,6 +10,5 @@ class nodosuma:
         self.valor2 = valor2
         self.valor = j
         self.suma = suma(valor1,valor2)
-        self.comparacion = comparar(binario1, binario2)
         self.next=None
 

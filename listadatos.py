@@ -46,9 +46,10 @@ class listados:
                     valor1 = self.buscardato(j,j)
                     valor2 = self.buscardato(i,j)
                     print(str(valor1)+" || "+str(valor2))
-                    valorbase1 = self.buscardatobase(j,j)
-                    valorbase2 = self.buscardatobase(i,j)
-                    metodosiniciales.listasumarllamar(valor1, valor2, valorbase1, valorbase2, j, nombre)
+                    if int(valor1)==int(valor2):
+                        valorbase1 = self.buscardatobase(j,j)
+                        valorbase2 = self.buscardatobase(i,j)
+                        metodosiniciales.listasumarllamar(valor1, valor2, valorbase1, valorbase2, j, nombre)
 
     def imprimir(self):
         i = self.cabeza
@@ -56,4 +57,11 @@ class listados:
             print(i.valor + " -> ")
             i = i.next
 
-
+    def buscardatobasegrafo(self, x, y):
+        nuevo = self.cabeza
+        while (nuevo != None):
+            if (nuevo.fila == str(x)) & (nuevo.columna == str(y)):
+                return nuevo.valor
+            if (x==0) | (y==0):
+                return 0
+            nuevo = nuevo.next
