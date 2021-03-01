@@ -11,5 +11,5 @@ class nododato:
         self.fila = fila
         self.columna = columna
         self.next = None
-        self.binario= valorbinario=matrizbinaria(self.valor)
+        self.binario=matrizbinaria(self.valor)
 

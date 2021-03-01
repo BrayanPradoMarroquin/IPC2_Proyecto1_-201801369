@@ -3,9 +3,7 @@ from tkinter import *
 from tkinter.filedialog import askopenfilename
 import metodosiniciales
 from lista import listanombres
-from listanombresuma import listanombrebase
 lsita = listanombres()
-listasuma=listanombrebase()
 root = Tk()
 root.withdraw()
 root.update()
@@ -28,11 +26,13 @@ def mostrardatos(Raiz):
     for elem in Raiz:
         lsita.agregarnodo(elem.get("nombre"), elem.get("n"), elem.get("m"), elem)
         print(elem.get("nombre")+" "+ elem.get("n")+" "+elem.get("m"))
-        #listasuma.agregarnododato(elem.get("nombre"), elem.get("n"), elem.get("m"))
 
-def comparar(Raiz):
-    for rama in Raiz:
-        respuesta = lsita.buscar(rama.get("nombre"), rama, rama.get("n"), rama.get("m"))
+def sobrelista(Raiz):
+    print("Se estan buscando los datos")
+    for elem in Raiz:
+        listamatriz = lsita.buscarnodomatriz(elem.get("nombre"))
+        listag = listamatriz.lista
+        metodosiniciales.enviarlista(listag, listamatriz.nombreM, listamatriz.fila, listamatriz.columna)
 
 def imprimir():
     lsita.imprimir()

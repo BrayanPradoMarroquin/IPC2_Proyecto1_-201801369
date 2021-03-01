@@ -24,11 +24,10 @@ while valor==True:
     if opcion==1:
         ruta = metodosI.llamararchivo()
         metodosI.mostrardatos(ruta)
-        #metodosI.imprimir()
     elif opcion==2:
         print("Archivo procesando")
         print("Generando matriz binaria")
-        metodosI.comparar(ruta)
+        metodosI.sobrelista(ruta)
     elif opcion==3:
         print("Archivo Escrito correctamente")
     elif opcion==4:

@@ -20,6 +20,3 @@ class nodoMatriz:
     def imprmir(self):
         self.lista.imprimir()
 
-    def obtenerruta(self, ruta, x, y, nombre):
-        print("se obtuvo la ruta")
-        self.lista.buscarnodo(ruta, x, y, nombre)
