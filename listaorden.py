@@ -17,3 +17,12 @@ class listado_orden:
         else:
             nuevo.next=self.cabeza
             self.cabeza=nuevo
+
+    def buscarnombre(self, nombrebase, datobinario, datovalor):
+        nuevo = self.cabeza
+        while (nuevo.nombre != nombrebase):
+            if (nuevo != None):
+                nuevo = nuevo.next
+                if (nuevo == None):
+                    return 0
+        nuevo.enviarnombre(datobinario, datovalor, nombrebase)

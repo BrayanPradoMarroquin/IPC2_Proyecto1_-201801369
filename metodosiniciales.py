@@ -18,5 +18,6 @@ def enviarlista(listag, nombreMatriz, fila, columna):
                 for j in range(1,(int(columna)+1)):
                         binario = listag.buscardatocomparar(i, j)
                         valor = listag.buscardatobasegrafo(i, j)
+                        listado.buscarnombrematriz(nombreMatriz, i, binario, valor)
                         print(str(binario) + " valor -> "+str(valor)+ " fila: "+str(i)+" Columna: "+str(j))
 

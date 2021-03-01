@@ -26,3 +26,12 @@ class listanombre:
                 if (nuevo == None):
                     return 0
         nuevo.enviarnombre(nombrebase)
+
+    def buscarnombrematriz(self, nombre, nombrefila, datobinario, datovalor):
+        nuevo = self.cabeza
+        while (nuevo.nombre!=nombre):
+            if (nuevo!=None):
+                nuevo = nuevo.next
+                if (nuevo==None):
+                    return 0
+        nuevo.enviarfilas(nombrefila, datobinario, datovalor)
