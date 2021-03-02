@@ -35,3 +35,12 @@ class listanombre:
                 if (nuevo==None):
                     return 0
         nuevo.enviarfilas(nombrefila, datobinario, datovalor)
+
+    def buscarnombrelist(self, nombre):
+        nuevo = self.cabeza
+        while (nuevo.nombre!=nombre):
+            if (nuevo!=None):
+                nuevo = nuevo.next
+                if (nuevo==None):
+                    return 0
+        return nuevo

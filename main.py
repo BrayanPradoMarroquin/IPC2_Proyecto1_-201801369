@@ -28,6 +28,7 @@ while valor==True:
         print("Archivo procesando")
         print("Generando matriz binaria")
         metodosI.sobrelista(ruta)
+        metodosI.nombre(ruta)
     elif opcion==3:
         print("Archivo Escrito correctamente")
     elif opcion==4:

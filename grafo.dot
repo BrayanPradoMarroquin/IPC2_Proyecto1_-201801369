@@ -7,7 +7,7 @@ Ejemplo-> columnas -> Col
 Ejemplo->11
 21[label="4"] 
 11->21
-31[label="7"] 
+31[label="0"] 
 21->31
 12[label="2"] 
 Ejemplo->12
@@ -15,7 +15,7 @@ Ejemplo->12
 12->22
 32[label="8"] 
 22->32
-13[label="3"] 
+13[label="0"] 
 Ejemplo->13
 23[label="6"] 
 13->23

@@ -18,3 +18,19 @@ class lista_dato_orden:
         else:
             nuevo.next = self.cabeza
             self.cabeza = nuevo
+
+    def recorrerlistabinario(self, recorrido):
+        nuevo = self.cabeza
+        cont = 0
+        while (cont!=(int(recorrido)-1)):
+            nuevo = nuevo.next
+            cont +=1
+        return nuevo.binario
+
+    def recorrerlistadato(self, recorrido):
+        nuevo = self.cabeza
+        cont = 0
+        while (cont!=(int(recorrido)-1)):
+            nuevo = nuevo.next
+            cont +=1
+        return nuevo.dato

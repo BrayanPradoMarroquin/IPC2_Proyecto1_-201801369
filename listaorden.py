@@ -26,3 +26,12 @@ class listado_orden:
                 if (nuevo == None):
                     return 0
         nuevo.enviarnombre(datobinario, datovalor, nombrebase)
+
+    def buscarnododato(self, nombre):
+        nuevo = self.cabeza
+        while (nuevo.nombre!=nombre):
+            if (nuevo!=None):
+                nuevo = nuevo.next
+                if (nuevo==None):
+                    return 0
+        return nuevo

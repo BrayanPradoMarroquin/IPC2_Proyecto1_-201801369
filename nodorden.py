@@ -6,7 +6,6 @@ class nodo_orden:
         self.nombre = nombre
         self.lista = lista_dato_orden()
         self.next = None
-        print("la fila es: "+str(self.nombre))
 
     def enviarnombre(self, datobinario, datovalor, nombrebase):
         self.lista.agregarnodo(datovalor, datobinario, nombrebase)
