@@ -1,5 +1,5 @@
 from nododato import nododato
-import metodosiniciales
+
 nodo = nododato
 
 class listados:
@@ -62,3 +62,17 @@ class listados:
             if (x==0) | (y==0):
                 return 0
             nuevo = nuevo.next
+
+    def eliminarnodo(self, fila):
+        anterior = None
+        while (self.cabeza.fila!=fila) & (self.cabeza!=None):
+            anterior=self.cabeza
+            self.cabeza=self.cabeza.next
+        if (self.cabeza==None):
+            print("valor no encontrado")
+        else:
+            if (anterior==None):
+                self.cabeza=self.cabeza.next
+            else:
+                anterior.next=self.cabeza.next
+        return "operacion completada"
