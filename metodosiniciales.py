@@ -1,8 +1,11 @@
+import  xml.etree.ElementTree as ET
 import metodosI
+import os
 import grafogenerar
 from listanombre import listanombre
-from listadatos import listados
+from lista import listanombres
 listado = listanombre()
+listamatriz = listanombres()
 comparacion1 = True
 comparacion2 = True
 cont=0
@@ -27,11 +30,12 @@ def comparacion(bin1, bin2):
                 return  True
         else:
                 return False
-
 #recorrer las filas descomprimidas
 def nombrematriz(nombre, x, y):
         lista = listado.buscarnombrelist(nombre)
-        listaoperando = listados()
+        listamatriz.agregarnodo(nombre, 0 , 0, 0)
+        matriz = listamatriz.buscarnodomatriz(nombre)
+        listaoperando = matriz.lista
         print(nombre)
         listad = lista.listad
         for i1 in range(1,(int(x)+1)):
@@ -63,5 +67,24 @@ def nombrematriz(nombre, x, y):
                                                         suma = int(data1) + int(data2)
                                                         cont=cont+1
                                                         listaoperando.agregarnodo(suma, i1, j)
-
                                         print("dato 1 es: "+ str(data1)+ " y el dato 2 es: "+str(data2))
+#escribir archivo xml final
+def creararchivo(ruta, listabase):
+        for elem in ruta:
+                datos = listamatriz.buscarnodomatriz(elem.get("nombre"))
+                base = listabase.buscarnombrelist(elem.get("nombre"))
+                valores = datos.lista
+                if valores==None:
+                        valores=base.lista
+                data = ET.Element('matrices')
+                matriz = ET.SubElement(data, "matriz")
+                matriz.set(datos.nombreM, elem.get("n"), elem.get("m"))
+                valor = ET.SubElement(matriz, "dato")
+                for i in range(1, (int(elem.get("n"))+1)):
+                        for j in range(1, (int(elem.get("m"))+1)):
+                                val = valores.buscardatobase(i, j)
+                                valor.set(val.fila, val.columna)
+                                valor.text = val.valor
+        mydata = ET.tostring(data)
+        myfile = open("resultado", "w")
+        myfile.write(mydata)

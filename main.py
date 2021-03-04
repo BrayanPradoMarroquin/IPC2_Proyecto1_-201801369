@@ -30,6 +30,7 @@ while valor==True:
         metodosI.sobrelista(ruta)
         metodosI.nombre(ruta)
     elif opcion==3:
+        metodosI.creararchi(ruta)
         print("Archivo Escrito correctamente")
     elif opcion==4:
         datos()

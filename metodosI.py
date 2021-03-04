@@ -51,3 +51,6 @@ def grafo(matriz):
 def nombre(Raiz):
     for elem in Raiz:
         metodosiniciales.nombrematriz(elem.get("nombre"), elem.get("n"), elem.get("m"))
+
+def creararchi(Raiz):
+    metodosiniciales.creararchivo(Raiz, lsita)

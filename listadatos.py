@@ -42,7 +42,7 @@ class listados:
     def imprimir(self):
         i = self.cabeza
         while i:
-            print(i.valor + " -> ")
+            print(str(i.valor) + " -> ")
             i = i.next
 
     def buscardatobasegrafo(self, x, y):
@@ -76,3 +76,10 @@ class listados:
             else:
                 anterior.next=self.cabeza.next
         return "operacion completada"
+
+    def buscardatobase(self, x, y):
+        nuevo = self.cabeza
+        while (nuevo != None):
+            if (nuevo.fila == str(x)) & (nuevo.columna == str(y)):
+                return nuevo
+            nuevo = nuevo.next
