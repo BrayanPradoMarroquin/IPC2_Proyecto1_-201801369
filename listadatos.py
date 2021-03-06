@@ -32,15 +32,56 @@ class listados:
                         return nuevo.binario
                     nuevo=nuevo.next
 
-    def buscarnodo(self, ruta, x, y):
-        for j in range(1,(int(y)+1)):
-            for i in range(1,(int(x)+1)):
-                valor1 = self.buscardato(j,j)
-                valor2 = self.buscardato(i,j)
-                print("valor 1 en la posicion "+str(j)+" "+str(j)+": "+str(valor1)+" valor 2 en la posicion "+str(i)+" "+str(j)+": "+str(valor2))
+    def buscardatobase(self, x, y):
+        nuevo = self.cabeza
+        while (nuevo != None):
+            if (nuevo.fila == str(x)) & (nuevo.columna == str(y)):
+                return nuevo.valor
+            nuevo = nuevo.next
 
     def imprimir(self):
         i = self.cabeza
         while i:
-            print(i.valor + " -> ")
+            print(str(i.valor) + " -> ")
             i = i.next
+
+    def buscardatobasegrafo(self, x, y):
+        nuevo = self.cabeza
+        while (nuevo != None):
+            if (nuevo.fila == str(x)) & (nuevo.columna == str(y)):
+                return nuevo.valor
+            if (x==0) | (y==0):
+                return 0
+            nuevo = nuevo.next
+
+    def buscardatocomparar(self, x, y):
+        nuevo = self.cabeza
+        while (nuevo != None):
+            if (nuevo.fila == str(x)) & (nuevo.columna == str(y)):
+                return nuevo.binario
+            if (x==0) | (y==0):
+                return 0
+            nuevo = nuevo.next
+
+    def eliminarnodo(self, fila):
+        anterior = None
+        if (self.cabeza!=None):
+            while  (self.cabeza!=None):
+                if (self.cabeza.fila!=fila):
+                    anterior=self.cabeza
+                    self.cabeza=self.cabeza.next
+                if (self.cabeza==None):
+                    print("valor no encontrado")
+                else:
+                    if (anterior==None):
+                        self.cabeza=self.cabeza.next
+                    else:
+                        anterior.next=self.cabeza.next
+        return "operacion completada"
+
+    def buscardatobase(self, x, y):
+        nuevo = self.cabeza
+        while (nuevo != None):
+            if (nuevo.fila == str(x)) & (nuevo.columna == str(y)):
+                return nuevo
+            nuevo = nuevo.next

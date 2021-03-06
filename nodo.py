@@ -15,11 +15,9 @@ class nodoMatriz:
         self.columna = columna
         self.ruta = ruta
         self.next= None
-        forsecond(self.ruta, self.lista)
+        if self.ruta!=0:
+            forsecond(self.ruta, self.lista)
 
     def imprmir(self):
         self.lista.imprimir()
 
-    def obtenerruta(self, ruta, x, y):
-        print("se obtuvo la ruta")
-        self.lista.buscarnodo(ruta, x, y)

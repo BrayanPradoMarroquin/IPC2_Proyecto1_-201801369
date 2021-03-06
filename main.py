@@ -24,17 +24,22 @@ while valor==True:
     if opcion==1:
         ruta = metodosI.llamararchivo()
         metodosI.mostrardatos(ruta)
-        #metodosI.imprimir()
     elif opcion==2:
         print("Archivo procesando")
         print("Generando matriz binaria")
-        metodosI.comparar(ruta)
+        if ruta !="":
+            metodosI.sobrelista(ruta)
+            metodosI.nombre(ruta)
     elif opcion==3:
-        print("Archivo Escrito correctamente")
+        if ruta!="":
+            metodosI.creararchi(ruta)
+            print("Archivo Escrito correctamente")
     elif opcion==4:
         datos()
     elif opcion==5:
-        print("Grafica generada correctamente")
+        if ruta!="":
+            matriz = input("Ingrese el nombre de la matriz a graficar: ")
+            metodosI.grafo(matriz)
     elif opcion==6:
         valor=False
         print("Gracias por usar el programa")

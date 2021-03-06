@@ -33,11 +33,14 @@ class listanombres:
             #self.imprimir_valores()
             i=i.next
 
-    def buscar(self, nombre, ruta, x, y):
-        nuevo = self.cabeza
-        while (nuevo!=None) and (nuevo.nombreM!=nombre):
-            nuevo=nuevo.next
-        nuevo.obtenerruta(ruta, x, y)
-
     def imprimir_valores(self):
         self.cabeza.imprmir()
+
+    def buscarnodomatriz(self, nombre):
+        nuevo = self.cabeza
+        while (nuevo.nombreM!=nombre):
+            if (nuevo != None):
+                nuevo=nuevo.next
+                if (nuevo==None):
+                    return 0
+        return nuevo
