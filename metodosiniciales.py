@@ -66,25 +66,27 @@ def nombrematriz(nombre, x, y):
                                                 else:
                                                         suma = int(data1) + int(data2)
                                                         cont=cont+1
-                                                        listaoperando.agregarnodo(suma, i1, j)
+                                                        listaoperando.agregarnodo(str(suma), str(i1), str(j))
                                         print("dato 1 es: "+ str(data1)+ " y el dato 2 es: "+str(data2))
 #escribir archivo xml final
 def creararchivo(ruta, listabase):
+        data = ET.Element('matrices')
         for elem in ruta:
                 datos = listamatriz.buscarnodomatriz(elem.get("nombre"))
-                base = listabase.buscarnombrelist(elem.get("nombre"))
+                base = listabase.buscarnodomatriz(elem.get("nombre"))
                 valores = datos.lista
-                if valores==None:
+                if valores.cabeza==None:
                         valores=base.lista
-                data = ET.Element('matrices')
-                matriz = ET.SubElement(data, "matriz")
-                matriz.set(datos.nombreM, elem.get("n"), elem.get("m"))
-                valor = ET.SubElement(matriz, "dato")
+                matriz = ET.SubElement(data, "matriz", attrib={})
+                matriz.set('name',datos.nombreM)
+                #matriz.set('n= ', datos.fila)
+                #matriz.set('m= ', datos.columna)
                 for i in range(1, (int(elem.get("n"))+1)):
                         for j in range(1, (int(elem.get("m"))+1)):
+                                valor = ET.SubElement(matriz, "dato", attrib={})
                                 val = valores.buscardatobase(i, j)
-                                valor.set(val.fila, val.columna)
+                                valor.set('x',val.fila)
                                 valor.text = val.valor
         mydata = ET.tostring(data)
-        myfile = open("resultado", "w")
-        myfile.write(mydata)
+        myfile = open("resultado.xml", "w")
+        myfile.write(str(mydata))

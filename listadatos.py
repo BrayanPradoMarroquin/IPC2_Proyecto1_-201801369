@@ -65,16 +65,18 @@ class listados:
 
     def eliminarnodo(self, fila):
         anterior = None
-        while (self.cabeza.fila!=fila) & (self.cabeza!=None):
-            anterior=self.cabeza
-            self.cabeza=self.cabeza.next
-        if (self.cabeza==None):
-            print("valor no encontrado")
-        else:
-            if (anterior==None):
-                self.cabeza=self.cabeza.next
-            else:
-                anterior.next=self.cabeza.next
+        if (self.cabeza!=None):
+            while  (self.cabeza!=None):
+                if (self.cabeza.fila!=fila):
+                    anterior=self.cabeza
+                    self.cabeza=self.cabeza.next
+                if (self.cabeza==None):
+                    print("valor no encontrado")
+                else:
+                    if (anterior==None):
+                        self.cabeza=self.cabeza.next
+                    else:
+                        anterior.next=self.cabeza.next
         return "operacion completada"
 
     def buscardatobase(self, x, y):

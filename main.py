@@ -27,16 +27,19 @@ while valor==True:
     elif opcion==2:
         print("Archivo procesando")
         print("Generando matriz binaria")
-        metodosI.sobrelista(ruta)
-        metodosI.nombre(ruta)
+        if ruta !="":
+            metodosI.sobrelista(ruta)
+            metodosI.nombre(ruta)
     elif opcion==3:
-        metodosI.creararchi(ruta)
-        print("Archivo Escrito correctamente")
+        if ruta!="":
+            metodosI.creararchi(ruta)
+            print("Archivo Escrito correctamente")
     elif opcion==4:
         datos()
     elif opcion==5:
-        matriz = input("Ingrese el nombre de la matriz a graficar: ")
-        metodosI.grafo(matriz)
+        if ruta!="":
+            matriz = input("Ingrese el nombre de la matriz a graficar: ")
+            metodosI.grafo(matriz)
     elif opcion==6:
         valor=False
         print("Gracias por usar el programa")
