@@ -70,23 +70,27 @@ def nombrematriz(nombre, x, y):
                                         print("dato 1 es: "+ str(data1)+ " y el dato 2 es: "+str(data2))
 #escribir archivo xml final
 def creararchivo(ruta, listabase):
-        data = ET.Element('matrices')
-        for elem in ruta:
-                datos = listamatriz.buscarnodomatriz(elem.get("nombre"))
-                base = listabase.buscarnodomatriz(elem.get("nombre"))
-                valores = datos.lista
-                if valores.cabeza==None:
-                        valores=base.lista
-                matriz = ET.SubElement(data, "matriz", attrib={})
-                matriz.set('name',datos.nombreM)
-                #matriz.set('n= ', datos.fila)
-                #matriz.set('m= ', datos.columna)
-                for i in range(1, (int(elem.get("n"))+1)):
-                        for j in range(1, (int(elem.get("m"))+1)):
-                                valor = ET.SubElement(matriz, "dato", attrib={})
-                                val = valores.buscardatobase(i, j)
-                                valor.set('x',val.fila)
-                                valor.text = val.valor
-        mydata = ET.tostring(data)
-        myfile = open("resultado.xml", "w")
-        myfile.write(str(mydata))
+        if listamatriz.vacio()!=True:
+                data = ET.Element('matrices')
+                for elem in ruta:
+                        datos = listamatriz.buscarnodomatriz(elem.get("nombre"))
+                        base = listabase.buscarnodomatriz(elem.get("nombre"))
+                        valores = datos.lista
+                        if valores.cabeza==None:
+                                valores=base.lista
+                        matriz = ET.SubElement(data, "matriz", attrib={})
+                        matriz.set('name',datos.nombreM)
+                        matriz.set('n', str(datos.fila))
+                        matriz.set('m', str(datos.columna))
+                        for i in range(1, (int(elem.get("n"))+1)):
+                                for j in range(1, (int(elem.get("m"))+1)):
+                                        valor = ET.SubElement(matriz, "dato", attrib={})
+                                        val = valores.buscardatobase(i, j)
+                                        valor.set('x',val.fila)
+                                        valor.set('y', val.columna)
+                                        valor.text = val.valor
+                mydata = ET.tostring(data)
+                myfile = open("resultado.xml", "w")
+                myfile.write(str(mydata))
+        else:
+                print("no se han procesado los datos")

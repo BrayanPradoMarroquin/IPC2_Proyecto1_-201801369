@@ -16,11 +16,10 @@ def generar(ruta):
 def llamararchivo():
     pathString = askopenfilename(filetypes=[("Text files", "*.xml")])
     if pathString=="":
-        print("No a elegido ningun archivo, debe elegir uno para continuar")
-        llamararchivo()
+        print("No a elegido ningun archivo, debe elegir uno para continuar \n")
     else:
         ruta = generar(pathString)
-    return ruta
+        return ruta
 
 def mostrardatos(Raiz):
     for elem in Raiz:
